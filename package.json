@@ -1,0 +1,34 @@
+{
+	"name": "electratype",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"wasm": "wasm-pack build --dev ../electratype-wasm --target web",
+		"wasm-module" : "yarn run wasm && jq '.type=\"module\"' ../electratype-wasm/pkg/package.json > tmp.json && mv tmp.json ../electratype-wasm/pkg/package.json",
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@melt-ui/pp": "^0.1.2",
+		"@sveltejs/adapter-auto": "^2.1.0",
+		"@sveltejs/kit": "^1.20.4",
+		"autoprefixer": "^10.4.16",
+		"eslint": "^8.28.0",
+		"eslint-plugin-svelte": "^2.30.0",
+		"postcss": "^8.4.31",
+		"svelte": "^4.0.5",
+		"svelte-sequential-preprocessor": "^2.0.1",
+		"tailwindcss": "^3.3.3",
+		"vite": "^4.4.11",
+		"vite-plugin-wasm-pack": "^0.1.12"
+	},
+	"type": "module",
+	"dependencies": {
+		"@codemirror/lang-javascript": "^6.2.1",
+		"@melt-ui/svelte": "^0.55.2",
+		"codemirror": "^6.0.1",
+		"svelte-splitpanes": "^0.8.0"
+	}
+}
