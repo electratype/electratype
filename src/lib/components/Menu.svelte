@@ -4,7 +4,6 @@
     import "/src/app.css";
 
     import MenuButton from "./MenuButton.svelte";
-    import { socket } from "../../hooks.client";
 
     import { createMenubar, melt } from '@melt-ui/svelte'
     import { onMount } from 'svelte';
@@ -18,6 +17,7 @@
     const {elements: { menu: menuD, item: itemD, trigger: triggerD }} = createMenu()
     const {elements: { menu: menuE, item: itemE, trigger: triggerE }} = createMenu()
 
+    /*
     function toggleEditor () {
 
         let current_location = window.location;
@@ -27,13 +27,11 @@
             window.location.replace(window.location.origin);
         }
     }
+    */
 
 </script>
 
 <div use:melt={$menubar} class="flex rounded-md bg-white p-1 w-min">
-    <button on:click={toggleEditor} class:active={$page.url.pathname === '/editor'}>Editor</button>
-    <div use:melt={$menuA}>
-    </div>
     <button use:melt={$triggerB} class="trigger">File</button>
     <div class="menu" use:melt={$menuB}>
         <div class="item" {...$itemB} use:itemB>New file...</div>

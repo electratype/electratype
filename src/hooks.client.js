@@ -1,3 +1,4 @@
+/*
 import { browser } from '$app/environment';
 
 export const socket = browser ? new WebSocket("ws://localhost:3669/ws") : null;
@@ -12,3 +13,4 @@ if (socket !== null) {
         console.log(event);
     })
 }
+*/

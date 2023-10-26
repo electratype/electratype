@@ -20,6 +20,7 @@ const typst = new Typst();
 typst.supply_fonts(fontBuffer);
 
 onmessage = (e) => {
+
     typst.set_source(e.data);
     let svg = typst.compile_svg();
     self.postMessage(svg);
