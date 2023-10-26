@@ -9,8 +9,8 @@
 
     function change_handler(e) {
         if (e.docChanged) {
-            typst_worker.postMessage(e.state.doc.toString());
-            //typst_worker.postMessage({changes: e.changes, changedRanges: e.changedRanges});
+            //typst_worker.postMessage(e.state.doc.toString());
+            typst_worker.postMessage({changes: e.changes, changedRanges: e.changedRanges});
         }
     }
 

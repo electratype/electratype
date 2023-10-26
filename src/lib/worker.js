@@ -28,13 +28,30 @@ onmessage = (e) => {
     if (typeof(e.data) === "string") {
         typst.set_source(e.data);
     } else {
-        let from = e.data.changedRanges[0].fromA;
-        let to = e.data.changedRanges[0].toA;
-        let text = e.data.changes.inserted[1].text.join("");
-        console.log(from, to, text);
-    
+        let fromA = e.data.changedRanges[0].fromA;
+        let toA = e.data.changedRanges[0].toA;
+
+        let diffA = toA - fromA;
+
+        let fromB = e.data.changedRanges[0].fromB;
+        let toB = e.data.changedRanges[0].toB;
+
+        let diffB = toB - fromB;
+
+        let text
+        if (diffA < diffB) {
+            text = e.data.changes.inserted[1].text.join("");
+
+            if (text === "") {
+                text = "\n"
+            }
+
+        } else {
+            text = "";
+        }
+        
         typst.edit_source(
-            from, to, text
+            fromA, toA, text
         );
     }
 
