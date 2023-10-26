@@ -2,7 +2,7 @@
     import {EditorView, basicSetup} from "codemirror";
     import {EditorState} from "@codemirror/state";
 
-    import { onMount } from "svelte";
+    import { afterUpdate, onMount } from "svelte";
 
     export let typst_worker;
     export let initial_doc;
@@ -10,6 +10,7 @@
     function change_handler(e) {
         if (e.docChanged) {
             typst_worker.postMessage(e.state.doc.toString());
+            //typst_worker.postMessage({changes: e.changes, changedRanges: e.changedRanges});
         }
     }
 
@@ -25,7 +26,10 @@
             }),
             parent: document.getElementById("editor")
         })
-    })
+
+        typst_worker.postMessage(initial_doc);
+    });
+
 </script>
 
 <div id="editor">
