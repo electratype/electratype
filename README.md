@@ -1,6 +1,6 @@
 # ElectraType
 
-![](/logo.svg)
+![](./static/favicon.svg)
 
 ElectraType is an open-source web based Typst editor built using Svelte.
 
