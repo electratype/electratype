@@ -1,6 +1,7 @@
 # ElectraType
 
 ![](./static/favicon.svg)
+![](./screenshots/capture1.png)
 
 ElectraType is an open-source web based Typst editor built using Svelte.
 
@@ -18,7 +19,7 @@ This project uses WASM module fount at sister repo [https://github.com/electraty
 
 ## Roadmap
 
-- [ ] Add font support
+- [ ] Add font supportgit
 - [ ] Add collaboration support
 - [ ] Add package support
 - [ ] Improve performance on larger documents
