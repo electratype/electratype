@@ -1,38 +1,25 @@
-# create-svelte
+# ElectraType
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+![](/logo.svg)
 
-## Creating a project
+ElectraType is an open-source web based Typst editor built using Svelte.
 
-If you're seeing this, you've probably already done this step. Congrats!
+This project is in very active development stage therefore **stability is not guaranteed**.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+This project uses WASM module fount at sister repo [https://github.com/electratype/wasm](https://github.com/electratype/wasm).
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Installation
 
-## Developing
+1. Create parent folder `/parent`
+2. Clone this repository into the parent dir folder `/electratype`
+3. Clone [https://github.com/electratype/wasm](https://github.com/electratype/wasm) in to the parent dir folder `/electratype-wasm`
+4. While inside `/electratype` folder, build WASM module using `yarn run wasm-module`
+5. Start app using `yarn run dev --open`
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Roadmap
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- [ ] Add font support
+- [ ] Add collaboration support
+- [ ] Add package support
+- [ ] Improve performance on larger documents
+- [ ] Add project directories and opening from file system
